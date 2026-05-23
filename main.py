@@ -9,9 +9,9 @@ from flask import Flask, request, jsonify
 import logging
 import sys
 # ╔══════════════════════════════════════════════════════════════════╗
-# ║  CREATOR: TARIKUL ISLAM
-# ║  TELEGRAN: https://t.me/paglu_dev
-# ║  PERSONAL TELEGRAM: https://t.me/itzpaglu
+# ║  CREATOR: RAHIL KHAN
+# ║  TELEGRAN: https://t.me/eaglehitsdiff
+# ║  PERSONAL TELEGRAM: https://t.me/eaglehitsdiff
 # ╚══════════════════════════════════════════════════════════════════╝
 
 # Configure logging
@@ -28,10 +28,10 @@ if not BOT_TOKEN:
     logger.error("❌ BOT_TOKEN not found! Please set your bot token in environment variables.")
     sys.exit(1)
 
-REQUIRED_CHANNELS = ["@your channel username"]
-GROUP_JOIN_LINK = "https://t.me/your_group_link"
-OWNER_ID = your tg user id (integer)    #Example: 6282811167
-OWNER_USERNAME = "@your username"
+REQUIRED_CHANNELS = ["@eaglelikeera"]
+GROUP_JOIN_LINK = "https://t.me/eaglelikeera03"
+OWNER_ID = 7118852390
+OWNER_USERNAME = "@eaglehitsdiff"
 
 bot = telebot.TeleBot(BOT_TOKEN)
 like_tracker = {}   # in-memory cache
@@ -86,8 +86,8 @@ def call_api(region, uid):
 
 def get_user_limit(user_id):
     if user_id == OWNER_ID:
-        return 999999999  # Unlimited for owner
-    return 1  # 1 request per day for regular users
+        return 99999999999999  # Unlimited for owner
+    return 2  # 1 request per day for regular users
 
 
 # Start background thread
@@ -222,7 +222,7 @@ def process_like(message, region, uid):
         usage["last_used"] = now_utc
         like_tracker[user_id] = usage
         
-        response_text = f"""✅ *Request Processed Successfully*\n\n👤 *Name:* `{player_name}`\n🆔 *UID:* `{player_uid}`\n🌍 *Region:* `{region}`\n🤡 *Likes Before:* `{likes_before}`\n📈 *Likes Added:* `{likes_given}`\n🗿 *Total Likes Now:* `{total_like}`\n🔐 *Remaining Requests:* `{max_limit - usage['used']}`\n👑 *Credit:* @itzpaglu"""
+        response_text = f"""✅ *Request Processed Successfully*\n\n👤 *Name:* `{player_name}`\n🆔 *UID:* `{player_uid}`\n🌍 *Region:* `{region}`\n🤡 *Likes Before:* `{likes_before}`\n📈 *Likes Added:* `{likes_given}`\n🗿 *Total Likes Now:* `{total_like}`\n🔐 *Remaining Requests:* `{max_limit - usage['used']}`\n👑 *Credit:* @eaglehitsdiff"""
 
         markup = InlineKeyboardMarkup()
 
